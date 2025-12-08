@@ -1,10 +1,21 @@
 "use client";
 import { getDataPath, getImgPath } from "@/utils/image";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const EducationSkills = () => {
   const [educationData, setEductionData] = useState<any>(null);
+
+  // Mapping of skill names to their official documentation URLs
+  const skillLinks: { [key: string]: string } = {
+    "React.js": "https://react.dev",
+    "Next.js": "https://nextjs.org",
+    "Figma": "https://www.figma.com",
+    "Node.js": "https://nodejs.org",
+    "Flutter": "https://flutter.dev",
+    "WordPress": "https://wordpress.org",
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,10 +68,14 @@ const EducationSkills = () => {
               </div>
               <div className="grid grid-cols-2 xs:grid-cols-3 gap-5 xl:gap-7 w-full">
                 {educationData?.skills?.map((value: any, index: any) => {
+                  const skillUrl = skillLinks[value?.name] || value?.link;
                   return (
-                    <div
+                    <Link
                       key={index}
-                      className="p-4 xl:p-6 border border-softGray rounded-lg flex flex-col gap-5 sm:gap-10 items-center justify-between"
+                      href={skillUrl || "#"}
+                      target={skillUrl ? "_blank" : undefined}
+                      rel={skillUrl ? "noopener noreferrer" : undefined}
+                      className="p-4 xl:p-6 border border-softGray rounded-lg flex flex-col gap-5 sm:gap-10 items-center justify-between hover:border-primary transition-colors cursor-pointer"
                     >
                       <div className="flex flex-col items-center gap-5">
                         <Image
@@ -90,7 +105,7 @@ const EducationSkills = () => {
                           </svg>
                         ))}
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>

@@ -3,32 +3,11 @@ import React from 'react';
 const ExperienceSec = () => {
     const experiences = [
         {
-            year: "2018",
-            title: "Junior UX Designer",
-            company: "www.startup.com",
+            year: "Nov 2022 – Oct 2025",
+            title: "Frontend Engineer",
+            company: "hSenid Mobile Solutions",
             type: "Fulltime",
-            description: "Suffered alteration in some form by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum"
-        },
-        {
-            year: "2019",
-            title: "Senior UX Designer",
-            company: "www.googly.com",
-            type: "Remote",
-            description: "Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem"
-        },
-        {
-            year: "2020-2022",
-            title: "Team Lead Designer",
-            company: "www.company.com",
-            type: "Fulltime",
-            description: "Handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated"
-        },
-        {
-            year: "2023+",
-            title: "Team Lead Designer",
-            company: "www.latest.com",
-            type: "Fulltime",
-            description: "Release of Letraset sheets containing Lorem Ipsum passages and more recently with desktop publishing software"
+            description: "Designed and developed UI for internal and client dashboards using React & Next.js. Created mobile-friendly UI components and reusable Figma design systems. Built and maintained landing pages with SEO optimization. Collaborated with backend teams to integrate REST APIs. Led a small frontend team during project deployments and sprint planning. Improved UI performance and accessibility for multiple client applications. Delivered 10+ production-ready dashboards. Reduced UI development time by 30% by introducing reusable components. Implemented modern UI systems used across teams."
         }
     ];
 

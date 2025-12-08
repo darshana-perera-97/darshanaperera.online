@@ -9,7 +9,7 @@ const index = () => {
           <div className="flex flex-col gap-4 md:gap-7 max-w-2xl">
             <div>
               <div className="flex items-center gap-8">
-                <h1>I'm Sruthi</h1>
+                <h1>I'm <span className="underline decoration-primary decoration-10">Darshana</span></h1>
                 <div className="wave">
                   <Image
                     src={getImgPath("/images/home/banner/wave-icon.svg")}
@@ -20,12 +20,10 @@ const index = () => {
                   />
                 </div>
               </div>
-              <h1>UI/UX Designer</h1>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">UI/UX Designer & Full-Stack Engineer</h2>
             </div>
             <p className="text-secondary font-normal max-w-md xl:max-w-xl">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. variations of passages of Lorem Ipsum available, but the
-              majority have suffered alteration
+              A creative and detail-oriented UI/UX Designer and Full-Stack Engineer with 2.5+ years of industry experience, specializing in frontend engineering, modern UI design, WordPress development, and mobile app development.
             </p>
           </div>
           <Image

@@ -2,39 +2,39 @@
   "workData": [
     {
       "image": "/images/work/work-img-1.jpg",
-      "title": "Mug Sticker Designing",
-      "client": "John Honnai",
-      "slug": "mug-sticker-designing"
+      "title": "Data Collector App (MERN)",
+      "client": "Full-Stack Project",
+      "slug": "data-collector-app"
     },
     {
       "image": "/images/work/work-img-2.jpg",
-      "title": "Mobile App Design",
-      "client": "John Honnai",
-      "slug": "mobile-app-design"
+      "title": "Sprout Dashboard",
+      "client": "UI/UX + Frontend Development",
+      "slug": "sprout-dashboard"
     },
     {
       "image": "/images/work/work-img-3.jpg",
-      "title": "Fashion Website Template",
-      "client": "John Honnai",
-      "slug": "fashion-website-template"
+      "title": "Rush.lk",
+      "client": "appiGo - Buffet Reservation Platform",
+      "slug": "rush-lk"
     },
     {
       "image": "/images/work/work-img-4.jpg",
-      "title": "Book Cover Design",
-      "client": "John Honnai",
-      "slug": "book-cover-design"
+      "title": "MyDialog App Clone",
+      "client": "Flutter & Firebase",
+      "slug": "mydialog-app-clone"
     },
     {
       "image": "/images/work/work-img-5.jpg",
-      "title": "Mobile App Design",
-      "client": "John Honnai",
-      "slug": "mobile-app-design"
+      "title": "MERN Dashboard",
+      "client": "Freelance Project",
+      "slug": "mern-dashboard"
     },
     {
       "image": "/images/work/work-img-6.jpg",
-      "title": "Mug Sticker Designing",
-      "client": "John Honnai",
-      "slug": "mug-sticker-designing"
+      "title": "WordPress Site",
+      "client": "SME Client",
+      "slug": "wordpress-site"
     }
   ]
 }

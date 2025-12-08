@@ -33,9 +33,10 @@ const ContactBar = () => {
                 (value: any, index: number) => (
                   <Link
                     key={index}
-                    onClick={(e) => e.preventDefault()}
-                    href={"#!"}
+                    href={value?.link || "#"}
                     className="flex items-center gap-2 lg:gap-4 text-sm md:text-base"
+                    target={value?.link?.startsWith("http") ? "_blank" : undefined}
+                    rel={value?.link?.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     <Image
                       src={getImgPath(value?.icon)}
@@ -58,8 +59,9 @@ const ContactBar = () => {
               {contactBarData?.socialItems?.map((value: any, index: number) => (
                 <Link
                   key={index}
-                  onClick={(e) => e.preventDefault()}
-                  href={"#!"}
+                  href={value?.link || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     src={getImgPath(value?.icon)}
