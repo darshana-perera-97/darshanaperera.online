@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:cpanel": "cross-env BASE_PATH=\"\" next build",
+    "build:github": "cross-env BASE_PATH=/Resume-Nextjs next build",
     "export": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -22,6 +24,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
     "tailwindcss": "^4",

@@ -1,9 +1,12 @@
 import type { NextConfig } from "next";
 
-const basePath = process.env.NODE_ENV === "production" ? "/Resume-Nextjs" : "";
+// For cPanel hosting, set BASE_PATH to empty string or remove it
+// For GitHub Pages, set BASE_PATH="/Resume-Nextjs"
+const basePath = process.env.BASE_PATH || "";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // Only use static export for production builds, not for dev server
+  ...(process.env.NODE_ENV === "production" && { output: "export" }),
   basePath,
   assetPrefix: basePath,
   images: {

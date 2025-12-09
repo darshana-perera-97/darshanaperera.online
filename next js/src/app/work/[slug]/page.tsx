@@ -6,9 +6,9 @@ import { readFileSync } from "fs";
 import { join } from "path";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generate static params for static export
@@ -34,11 +34,12 @@ export function generateStaticParams() {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps) {
+  const { slug } = await params;
   try {
     const filePath = join(process.cwd(), "public", "data", "work-data.json");
     const fileContents = readFileSync(filePath, "utf8");
     const data = JSON.parse(fileContents);
-    const work = data.workData.find((item: any) => item.slug === params.slug);
+    const work = data.workData.find((item: any) => item.slug === slug);
 
     if (!work) {
       return {
@@ -57,7 +58,9 @@ export async function generateMetadata({ params }: PageProps) {
   }
 }
 
-const WorkDetailPage = ({ params }: PageProps) => {
+const WorkDetailPage = async ({ params }: PageProps) => {
+  const { slug } = await params;
+  
   // Read data from filesystem (server-side)
   let workData: any = null;
   let currentWork: any = null;
@@ -67,7 +70,7 @@ const WorkDetailPage = ({ params }: PageProps) => {
     const fileContents = readFileSync(filePath, "utf8");
     const data = JSON.parse(fileContents);
     workData = data.workData;
-    currentWork = workData.find((item: any) => item.slug === params.slug);
+    currentWork = workData.find((item: any) => item.slug === slug);
   } catch (error) {
     console.error("Error reading work data:", error);
     notFound();
@@ -177,7 +180,7 @@ const WorkDetailPage = ({ params }: PageProps) => {
               <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 sm:mb-8 md:mb-10">Other Works</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
                 {workData
-                  .filter((work: any) => work.slug !== params.slug)
+                  .filter((work: any) => work.slug !== slug)
                   .slice(0, 2)
                   .map((work: any, index: number) => (
                     <Link
