@@ -1,5 +1,8 @@
+"use client";
+
 import { getImgPath } from "@/utils/image";
 import Image from "next/image";
+import AnimateOnScroll from "../../layout/animate-on-scroll";
 
 const AboutMe = () => {
   return (
@@ -17,36 +20,39 @@ const AboutMe = () => {
 
         <div className="relative z-10">
           <div className="container">
-            <div className="flex items-center justify-between gap-2 border-b border-black pb-7">
-              <h2>About Me</h2>
-              <p className="text-xl text-primary">( 01 )</p>
-            </div>
-
-            <div className="pt-10 xl:pt-16 flex gap-10 items-center justify-between">
-              <div className="w-[303px] h-[440px] hidden lg:flex">
-                <Image
-                  src={getImgPath("/images/home/about-me/about-banner-img.svg")}
-                  alt="about-banner"
-                  width={303}
-                  height={440}
-                  className="w-full h-full"
-                />
+            <AnimateOnScroll delay={0}>
+              <div className="flex items-center justify-between gap-2 border-b border-black pb-7">
+                <h2>About Me</h2>
+                <p className="text-xl text-primary">( 01 )</p>
               </div>
+            </AnimateOnScroll>
 
-              <div className="w-full lg:max-w-2xl flex-1">
-                <p>
+            <AnimateOnScroll delay={100}>
+              <div className="pt-6 sm:pt-10 xl:pt-16 flex flex-col lg:flex-row gap-6 sm:gap-10 items-center lg:items-start justify-between">
+                <div className="w-[200px] h-[300px] sm:w-[250px] sm:h-[350px] lg:w-[303px] lg:h-[440px] hidden md:flex">
+                  <Image
+                    src={getImgPath("/images/home/about-me/about-banner-img.svg")}
+                    alt="about-banner"
+                    width={303}
+                    height={440}
+                    className="w-full h-full"
+                  />
+                </div>
+
+                <div className="w-full lg:max-w-2xl flex-1">
+                <p className="text-sm sm:text-base">
                   Strong hands-on experience building scalable web dashboards, mobile applications, and custom digital solutions using React, Next.js, Flutter, and MERN stack. Freelances actively for SMEs, delivering high-quality landing pages, WordPress sites, and mobile apps. Passionate about creating intuitive user experiences and clean, modern interfaces.
                 </p>
 
-                <div className="grid grid-cols-3 py-10 xl:py-16 gap-5 border-b border-mistGray">
+                <div className="grid grid-cols-1 sm:grid-cols-3 py-8 sm:py-10 xl:py-16 gap-4 sm:gap-5 border-b border-mistGray">
                   {[
                     { count: "2.5+", label: "Years of experience" },
                     { count: "10+", label: "Production Dashboards" },
                     { count: "30%", label: "Time Reduction" },
                   ].map((item, i) => (
-                    <div key={i}>
-                      <h3>{item.count}</h3>
-                      <p className="text-base md:text-lg text-black">
+                    <div key={i} className="text-center sm:text-left">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl">{item.count}</h3>
+                      <p className="text-sm sm:text-base md:text-lg text-black mt-1 sm:mt-2">
                         {item.label}
                       </p>
                     </div>
@@ -76,6 +82,7 @@ const AboutMe = () => {
                 </div>
               </div>
             </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </div>

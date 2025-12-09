@@ -1,11 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import Logo from "../logo";
+import { getImgPath } from "@/utils/image";
 
 const Header = () => {
     const handleDownloadPDF = () => {
-        window.print();
+        // Create a link element to download the PDF
+        const link = document.createElement("a");
+        link.href = getImgPath("/resume.pdf");
+        link.download = "Darshana-Perera-Resume.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
     return (
         <header className="navbar top-0 left-0 z-999 w-full absolute">
@@ -19,10 +25,11 @@ const Header = () => {
                     
                         <button
                             onClick={handleDownloadPDF}
-                            className="relative overflow-hidden cursor-pointer w-fit py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group"
+                            className="relative overflow-hidden cursor-pointer w-fit py-2 sm:py-3 md:py-5 px-3 sm:px-4 md:px-7 border border-primary rounded-full group text-xs sm:text-sm md:text-xl"
                         >
-                            <span className="relative z-10 text-xl font-medium text-black group-hover:text-white transition-colors duration-300">
-                                Download PDF Resume
+                            <span className="relative z-10 font-medium text-black group-hover:text-white transition-colors duration-300 whitespace-nowrap">
+                                <span className="hidden sm:inline">Download PDF Resume</span>
+                                <span className="sm:hidden">Download PDF</span>
                             </span>
                         </button>
                     </div>

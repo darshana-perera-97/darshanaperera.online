@@ -1,6 +1,8 @@
 import Logo from "../logo";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="py-6 sm:py-14 flex items-center justify-center">
       <div className="container">
@@ -11,6 +13,11 @@ const Footer = () => {
               <Logo />
             </div>
             <div className="flex-grow h-px bg-black" />
+          </div>
+          <div className="w-full flex items-center justify-center mt-4 sm:mt-6 md:mt-8 px-4">
+            <p className="text-xs sm:text-sm text-secondary text-center">
+              © {currentYear} <a href="https://www.darshanaperera.online" target="_blank" rel="noopener noreferrer" className="text-primary underline">Darshana Perera</a>. All rights reserved.
+            </p>
           </div>
         </div>
       </div>

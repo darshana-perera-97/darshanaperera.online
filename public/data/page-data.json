@@ -79,6 +79,16 @@
         "name": "WordPress",
         "icon": "/images/home/education-skill/wordpress-icon.svg",
         "rating": 4
+      },
+      {
+        "name": "Arduino",
+        "icon": "/images/home/education-skill/arduino-icon.svg",
+        "rating": 4
+      },
+      {
+        "name": "Graphic",
+        "icon": "/images/home/education-skill/graphic-icon.svg",
+        "rating": 5
       }
     ]
   },

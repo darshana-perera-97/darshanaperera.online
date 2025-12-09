@@ -3,6 +3,7 @@ import { getDataPath, getImgPath } from "@/utils/image";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import AnimateOnScroll from "../../layout/animate-on-scroll";
 
 const EducationSkills = () => {
   const [educationData, setEductionData] = useState<any>(null);
@@ -15,6 +16,8 @@ const EducationSkills = () => {
     "Node.js": "https://nodejs.org",
     "Flutter": "https://flutter.dev",
     "WordPress": "https://wordpress.org",
+    "MongoDB": "https://www.mongodb.com",
+    "TypeScript": "https://www.typescriptlang.org",
   };
 
   useEffect(() => {
@@ -46,15 +49,18 @@ const EducationSkills = () => {
             className="no-print absolute top-0 left-0 transform -translate-y-1/2"
           />
           <div className="relative z-10 py-16 md:py-32">
-            <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 xl:mb-16">
-              <h2>Education & Skills</h2>
-              <p className="text-xl text-orange-500">( 03 )</p>
-            </div>
+            <AnimateOnScroll delay={0}>
+              <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 xl:mb-16">
+                <h2>Education & Skills</h2>
+                <p className="text-xl text-orange-500">( 03 )</p>
+              </div>
+            </AnimateOnScroll>
             <div className="flex flex-col lg:flex-row items-center gap-10 xl:gap-20">
-              <div className="w-full lg:max-w-md flex flex-col gap-0 xl:gap-8">
-                {educationData?.education?.map((value: any, index: any) => {
-                  return (
-                    <div key={index} className="flex items-start gap-6">
+              <AnimateOnScroll delay={100}>
+                <div className="w-full lg:max-w-md flex flex-col gap-0 xl:gap-8">
+                  {educationData?.education?.map((value: any, index: any) => {
+                    return (
+                      <div key={index} className="flex items-start gap-6">
                       <div className="no-print mt-2.5 w-3.5 h-3.5 rounded-full border-1 bg-white flex items-center justify-center border-black">
                         <div className="w-1.5 h-1.5 rounded-full bg-black"></div>
                       </div>
@@ -65,27 +71,29 @@ const EducationSkills = () => {
                     </div>
                   );
                 })}
-              </div>
-              <div className="grid grid-cols-2 xs:grid-cols-3 gap-5 xl:gap-7 w-full">
+                </div>
+              </AnimateOnScroll>
+              <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-5 xl:gap-7 w-full">
                 {educationData?.skills?.map((value: any, index: any) => {
                   const skillUrl = skillLinks[value?.name] || value?.link;
                   return (
-                    <Link
-                      key={index}
-                      href={skillUrl || "#"}
-                      target={skillUrl ? "_blank" : undefined}
-                      rel={skillUrl ? "noopener noreferrer" : undefined}
-                      className="p-4 xl:p-6 border border-softGray rounded-lg flex flex-col gap-5 sm:gap-10 items-center justify-between hover:border-primary transition-colors cursor-pointer"
-                    >
-                      <div className="flex flex-col items-center gap-5">
-                        <Image
-                          src={getImgPath(value?.icon)}
-                          alt="icon"
-                          width={70}
-                          height={70}
-                        />
-                        <p className="text-black font-normal">{value?.name}</p>
-                      </div>
+                    <AnimateOnScroll key={index} delay={index * 50}>
+                      <Link
+                        href={skillUrl || "#"}
+                        target={skillUrl ? "_blank" : undefined}
+                        rel={skillUrl ? "noopener noreferrer" : undefined}
+                        className="p-3 sm:p-4 xl:p-6 border border-softGray rounded-lg flex flex-col gap-2 sm:gap-3 md:gap-4 items-center justify-between hover:border-primary transition-colors cursor-pointer"
+                      >
+                        <div className="flex flex-col items-center gap-3 sm:gap-4 md:gap-5">
+                          <Image
+                            src={getImgPath(value?.icon)}
+                            alt="icon"
+                            width={70}
+                            height={70}
+                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[70px] lg:h-[70px]"
+                          />
+                          <p className="text-black font-normal text-xs sm:text-sm md:text-base">{value?.name}</p>
+                        </div>
                       <div className="flex gap-1">
                         {[...Array(5)].map((_, i) => (
                           <svg
@@ -106,6 +114,7 @@ const EducationSkills = () => {
                         ))}
                       </div>
                     </Link>
+                    </AnimateOnScroll>
                   );
                 })}
               </div>

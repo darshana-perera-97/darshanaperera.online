@@ -4,37 +4,133 @@
       "image": "/images/work/work-img-1.jpg",
       "title": "Data Collector App (MERN)",
       "client": "Full-Stack Project",
-      "slug": "data-collector-app"
+      "slug": "data-collector-app",
+      "description": "A comprehensive full-stack application built with the MERN stack for efficient data collection and management. Features real-time data synchronization, user authentication, and robust data validation.",
+      "technologies": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose"
+      ],
+      "features": [
+        "Real-time data synchronization",
+        "User authentication & authorization",
+        "Data validation & error handling",
+        "Responsive dashboard design",
+        "RESTful API architecture"
+      ],
+      "year": "DEC 2024"
     },
     {
       "image": "/images/work/work-img-2.jpg",
       "title": "Sprout Dashboard",
       "client": "UI/UX + Frontend Development",
-      "slug": "sprout-dashboard"
+      "slug": "sprout-dashboard",
+      "description": "Modern dashboard interface designed with a focus on user experience and clean aesthetics. Built with React.js and Next.js, featuring intuitive navigation and data visualization components.",
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "Figma",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "features": [
+        "Modern UI/UX design",
+        "Interactive data visualization",
+        "Responsive layout",
+        "Component-based architecture",
+        "Performance optimized"
+      ],
+      "year": "2023"
     },
     {
       "image": "/images/work/work-img-3.jpg",
       "title": "Rush.lk",
-      "client": "appiGo - Buffet Reservation Platform",
-      "slug": "rush-lk"
+      "client": "Buffet Reservation Platform",
+      "slug": "rush-lk",
+      "description": "A complete buffet reservation platform developed for appiGo, enabling users to book tables, manage reservations, and explore dining options. Features seamless booking flow and admin management system.",
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "MongoDB",
+        "Stripe API"
+      ],
+      "features": [
+        "Table reservation system",
+        "Payment integration",
+        "Admin dashboard",
+        "Real-time availability",
+        "Email notifications"
+      ],
+      "year": "JUL 2025"
     },
     {
       "image": "/images/work/work-img-4.jpg",
       "title": "MyDialog App Clone",
       "client": "Flutter & Firebase",
-      "slug": "mydialog-app-clone"
+      "slug": "mydialog-app-clone",
+      "description": "Mobile application clone built with Flutter and Firebase, replicating core messaging features with real-time chat functionality, user authentication, and cloud storage integration.",
+      "technologies": [
+        "Flutter",
+        "Firebase",
+        "Dart",
+        "Cloud Firestore",
+        "Firebase Auth"
+      ],
+      "features": [
+        "Real-time messaging",
+        "User authentication",
+        "Cloud storage",
+        "Push notifications",
+        "Cross-platform support"
+      ],
+      "year": "2023"
     },
     {
       "image": "/images/work/work-img-5.jpg",
       "title": "MERN Dashboard",
       "client": "Freelance Project",
-      "slug": "mern-dashboard"
+      "slug": "mern-dashboard",
+      "description": "Custom admin dashboard built for a freelance client using the MERN stack. Features comprehensive data management, analytics, and reporting capabilities with a clean, professional interface.",
+      "technologies": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Chart.js"
+      ],
+      "features": [
+        "Admin panel",
+        "Data analytics",
+        "User management",
+        "Report generation",
+        "Secure authentication"
+      ],
+      "year": "2023"
     },
     {
       "image": "/images/work/work-img-6.jpg",
       "title": "WordPress Site",
       "client": "SME Client",
-      "slug": "wordpress-site"
+      "slug": "wordpress-site",
+      "description": "Custom WordPress website developed for an SME client, featuring responsive design, SEO optimization, and custom functionality. Includes content management system and e-commerce integration.",
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "MySQL",
+        "WooCommerce",
+        "Custom Themes"
+      ],
+      "features": [
+        "Responsive design",
+        "SEO optimized",
+        "E-commerce integration",
+        "Content management",
+        "Custom plugins"
+      ],
+      "year": "2024"
     }
   ]
 }

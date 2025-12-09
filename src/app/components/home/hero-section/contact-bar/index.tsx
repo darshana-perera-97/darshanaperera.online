@@ -3,9 +3,11 @@ import { getDataPath, getImgPath } from "@/utils/image";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import AnimateOnScroll from "../../../layout/animate-on-scroll";
 
 const ContactBar = () => {
   const [contactBarData, setContactBarData] = useState<any>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,33 +22,36 @@ const ContactBar = () => {
     };
 
     fetchData();
+    setTimeout(() => setIsVisible(true), 300);
   }, []);
 
   return (
     <section>
       <div className="border-t border-softGray">
         <div className="container">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 md:py-7">
+          <div className={`flex flex-col sm:flex-row items-center justify-between gap-4 py-6 md:py-7 transition-all duration-700 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}>
             {/* Contact Items */}
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-1.5 md:gap-5 lg:gap-11">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3 md:gap-5 lg:gap-11">
               {contactBarData?.contactItems?.map(
                 (value: any, index: number) => (
                   <Link
                     key={index}
                     href={value?.link || "#"}
-                    className="flex items-center gap-2 lg:gap-4 text-sm md:text-base"
+                    className="flex items-center gap-1.5 sm:gap-2 lg:gap-4 text-xs sm:text-sm md:text-base"
                     target={value?.link?.startsWith("http") ? "_blank" : undefined}
                     rel={value?.link?.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     <Image
                       src={getImgPath(value?.icon)}
                       alt={value?.type}
-                      width={24}
-                      height={24}
-                      className="min-w-[24px] min-h-[24px]"
+                      width={20}
+                      height={20}
+                      className="min-w-[20px] min-h-[20px] sm:min-w-[24px] sm:min-h-[24px]"
                     />
 
-                    <h6 className="text-sm md:text-base xl:text-xl hover:text-primary">
+                    <h6 className="hover:text-primary break-all sm:break-normal">
                       {value?.label}
                     </h6>
                   </Link>

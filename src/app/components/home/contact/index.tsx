@@ -3,6 +3,7 @@ import { getDataPath, getImgPath } from "@/utils/image";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import AnimateOnScroll from "../../layout/animate-on-scroll";
 
 const Contact = () => {
   const [contactData, setContactData] = useState<any>(null);
@@ -70,14 +71,17 @@ const Contact = () => {
     <section className="no-print">
       <div className="container">
         <div className="pt-16 md:pt-32 pb-20">
-          <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
-            <h2>Contact Me</h2>
-            <p className="text-xl text-orange-500">( 05 )</p>
-          </div>
+          <AnimateOnScroll delay={0}>
+            <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
+              <h2>Contact Me</h2>
+              <p className="text-xl text-orange-500">( 05 )</p>
+            </div>
+          </AnimateOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <form onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-7 sm:gap-12">
-                <div className="grid grid-cols-2 gap-8">
+            <AnimateOnScroll delay={100}>
+              <form onSubmit={handleSubmit}>
+              <div className="flex flex-col gap-5 sm:gap-7 md:gap-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
                   <div>
                     <label htmlFor="name" className="label">
                       Name *
@@ -150,15 +154,17 @@ const Contact = () => {
                 )}
                 <button
                   type="submit"
-                  className="relative overflow-hidden cursor-pointer w-fit py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group"
+                  className="relative overflow-hidden cursor-pointer w-full sm:w-fit py-3 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group"
                 >
-                  <span className="relative z-10 text-xl font-medium text-primary group-hover:text-white transition-colors duration-300">
+                  <span className="relative z-10 text-base sm:text-lg md:text-xl font-medium text-primary group-hover:text-white transition-colors duration-300">
                     Send Now
                   </span>
                 </button>
               </div>
             </form>
-            <div className="flex flex-col sm:flex-row md:flex-col justify-between gap-5 md:gap-20 items-center md:items-end">
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={200}>
+              <div className="flex flex-col sm:flex-row md:flex-col justify-between gap-5 md:gap-20 items-center md:items-end">
               <div className="flex flex-wrap flex-row md:flex-col items-start md:items-end gap-4 md:gap-6">
                 {contactData?.socialLinks?.map((value: any, index: any) => {
                   return (
@@ -190,6 +196,7 @@ const Contact = () => {
                 })}
               </div>
             </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </div>

@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import AnimateOnScroll from "../../layout/animate-on-scroll";
 
 const ExperienceSec = () => {
     const experiences = [
@@ -15,20 +18,23 @@ const ExperienceSec = () => {
         <section>
             <div className="py-16 md:py-32">
                 <div className="container mx-auto px-4">
-                    <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
-                        <h2>Experience</h2>
-                        <p className="text-xl text-primary">( 02 )</p>
-                    </div>
+                    <AnimateOnScroll delay={0}>
+                        <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
+                            <h2>Experience</h2>
+                            <p className="text-xl text-primary">( 02 )</p>
+                        </div>
+                    </AnimateOnScroll>
 
                     <div className="space-y-7 md:space-y-12">
                         {experiences.map((exp, index) => (
-                            <div key={index} className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 md:gap-4 xl:gap-8 items-start relative">
-                                <div className="">
-                                    <h3 className="font-bold mb-2 text-black">{exp.year}</h3>
-                                    <h4 className="text-lg font-normal">{exp.title}</h4>
+                            <AnimateOnScroll key={index} delay={index * 100}>
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 md:gap-4 xl:gap-8 items-start relative">
+                                <div className="mb-4 sm:mb-0">
+                                    <h3 className="font-bold mb-2 text-black text-base sm:text-lg md:text-xl">{exp.year}</h3>
+                                    <h4 className="text-sm sm:text-base md:text-lg font-normal">{exp.title}</h4>
                                 </div>
 
-                                <div className=" relative">
+                                <div className="relative hidden sm:block">
                                     {index < experiences.length && (
                                         <div className={`absolute left-0 top-3 w-px ${index < experiences.length - 1 ? 'h-40' : 'h-30'} bg-softGray`}></div>
                                     )}
@@ -44,16 +50,24 @@ const ExperienceSec = () => {
 
                                     <div className="pl-4 lg:pl-7">
                                         <div className="flex items-center gap-2 mb-1">
-                                            <span className="text-xl text-black font-normal">{exp.company}</span>
+                                            <span className="text-lg sm:text-xl text-black font-normal">{exp.company}</span>
                                         </div>
-                                        <p className="text-base font-normal">{exp.type}</p>
+                                        <p className="text-sm sm:text-base font-normal">{exp.type}</p>
                                     </div>
                                 </div>
+                                
+                                <div className="block sm:hidden mb-4">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-lg text-black font-normal">{exp.company}</span>
+                                    </div>
+                                    <p className="text-sm font-normal">{exp.type}</p>
+                                </div>
 
-                                <div className="pl-8 sm:pl-0">
-                                    <p className="leading-relaxed text-base">{exp.description}</p>
+                                <div className="pl-0 sm:pl-8">
+                                    <p className="leading-relaxed text-sm sm:text-base mt-4 sm:mt-0">{exp.description}</p>
                                 </div>
                             </div>
+                            </AnimateOnScroll>
                         ))}
                     </div>
                 </div>
