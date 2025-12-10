@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work | Darshana Perera</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FE4300",
+              secondary: "#868686",
+              softGray: "#F0F0F0",
+              mistGray: "#D7DCDD",
+              gray: "#C0D8E0",
+            },
+            fontFamily: {
+              grotesque: ['"Bricolage Grotesque"', "system-ui", "sans-serif"],
+            },
+            container: {
+              center: true,
+              padding: {
+                DEFAULT: "1.25rem",
+                sm: "1.75rem",
+              },
+              screens: {
+                xl: "1280px",
+                "2xl": "1340px",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body class="font-grotesque bg-white text-slate-900">
+    <div class="custom-cursor cursor-dot" aria-hidden="true"></div>
+    <div class="custom-cursor cursor-ring" aria-hidden="true"></div>
+
+    <header class="navbar absolute top-0 left-0 w-full z-50">
+      <div class="container">
+        <nav class="py-6 md:py-7 flex items-center gap-4 sm:gap-8">
+          <a href="../../index.html">
+            <img src="../../images/logo/logo.svg" alt="Logo" class="w-14 h-14" />
+          </a>
+          <button
+            id="download-resume"
+            class="relative overflow-hidden cursor-pointer w-fit py-2 sm:py-3 md:py-5 px-3 sm:px-4 md:px-7 border border-primary rounded-full group text-xs sm:text-sm md:text-xl"
+          >
+            <span
+              class="relative z-10 font-medium text-black group-hover:text-white transition-colors duration-300 whitespace-nowrap"
+            >
+              <span class="hidden sm:inline">Download PDF Resume</span>
+              <span class="sm:hidden">Download PDF</span>
+            </span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="min-h-screen pt-24 md:pt-28">
+      <div class="container pt-6 pb-6">
+        <a href="../../index.html" class="inline-flex items-center gap-2 text-secondary hover:text-black transition-colors">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Back to Home</span>
+        </a>
+      </div>
+
+      <div class="container pt-6 md:pt-10 mb-12 md:mb-20">
+        <div class="relative w-full h-[250px] sm:h-[320px] md:h-[420px] lg:h-[520px] rounded-xl overflow-hidden">
+          <img id="work-hero" src="" alt="Work hero" class="object-cover w-full h-full" />
+        </div>
+      </div>
+
+      <div id="work-content" class="container pb-16">
+        <div class="max-w-4xl mx-auto space-y-10">
+          <div class="border-b border-black pb-5">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+              <h1 id="work-title" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold"></h1>
+              <span id="work-year" class="text-lg sm:text-xl text-primary font-semibold"></span>
+            </div>
+            <p id="work-client" class="text-base sm:text-lg text-secondary"></p>
+          </div>
+
+          <div class="space-y-8">
+            <div class="space-y-3">
+              <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold">Overview</h3>
+              <p id="work-description" class="text-sm sm:text-base text-secondary leading-relaxed"></p>
+            </div>
+
+            <div class="space-y-4">
+              <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold">Technologies Used</h3>
+              <div id="work-technologies" class="flex flex-wrap gap-2 sm:gap-3"></div>
+            </div>
+
+            <div class="space-y-4">
+              <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold">Key Features</h3>
+              <ul id="work-features" class="space-y-2 sm:space-y-3"></ul>
+            </div>
+
+            <div class="pt-8 border-t border-mistGray">
+              <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold mb-6">Other Works</h3>
+              <div id="other-works" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-8 sm:py-14">
+      <div class="container flex flex-col items-center gap-4">
+        <div class="relative flex items-center w-full">
+          <div class="flex-grow h-px bg-black"></div>
+          <div class="mx-4">
+            <img src="../../images/logo/logo.svg" alt="logo" class="w-12 h-12" />
+          </div>
+          <div class="flex-grow h-px bg-black"></div>
+        </div>
+        <p class="text-xs sm:text-sm text-secondary text-center">
+          © <span id="footer-year"></span> <a href="https://www.darshanaperera.online" target="_blank" class="text-primary underline">Darshana Perera</a>. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("footer-year").textContent = new Date().getFullYear();
+    </script>
+    <script src="../../js/work-detail.js" defer></script>
+  </body>
+</html>
+

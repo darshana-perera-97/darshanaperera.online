@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import WorkDetail from "./pages/WorkDetail";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import CustomCursor from "./components/layout/CustomCursor";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-white min-h-screen">
+      <CustomCursor />
+      <ScrollToTop />
+      <Header />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/work/:slug" element={<WorkDetail />} />
+      </Routes>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,123 @@
+{
+  "contactBar": {
+    "contactItems": [
+      {
+        "type": "email",
+        "label": "ds.perera.1997@gmail.com",
+        "icon": "/images/icon/mail-icon.svg",
+        "link": "mailto:ds.perera.1997@gmail.com"
+      },
+      {
+        "type": "phone",
+        "label": "+94 77 146 1925",
+        "icon": "/images/icon/call-icon.svg",
+        "link": "tel:+94771461925"
+      },
+      {
+        "type": "website",
+        "label": "www.darshanaperera.online",
+        "icon": "/images/icon/web-icon.svg",
+        "link": "https://www.darshanaperera.online"
+      }
+    ],
+    "socialItems": [
+      {
+        "platform": "linkedin",
+        "icon": "/images/icon/linkedin-icon.svg",
+        "link": "https://www.linkedin.com/in/darshana-s-perera/"
+      },
+      {
+        "platform": "website",
+        "icon": "/images/icon/web-icon2.svg",
+        "link": "https://www.darshanaperera.online"
+      },
+      {
+        "platform": "facebook",
+        "icon": "/images/icon/facebook-icon.svg",
+        "link": "https://www.facebook.com/darshana.perera.1800"
+      }
+    ]
+  },
+  "educationData": {
+    "education": [
+      {
+        "title": "Bachelor of Computer Science (2019 – 2023)",
+        "description": "Completed comprehensive computer science degree with focus on software engineering, web development, and system design."
+      },
+      {
+        "title": "ICT Technician – NVQ Level 4 (2017)",
+        "description": "Professional certification in Information and Communication Technology, covering hardware, software, and network fundamentals."
+      }
+    ],
+    "skills": [
+      {
+        "name": "React.js",
+        "icon": "/images/home/education-skill/react-icon.svg",
+        "rating": 5
+      },
+      {
+        "name": "Next.js",
+        "icon": "/images/home/education-skill/next-icon.svg",
+        "rating": 5
+      },
+      {
+        "name": "Figma",
+        "icon": "/images/home/education-skill/figma-icon.svg",
+        "rating": 5
+      },
+      {
+        "name": "Node.js",
+        "icon": "/images/home/education-skill/node-icon.svg",
+        "rating": 5
+      },
+      {
+        "name": "Flutter",
+        "icon": "/images/home/education-skill/flutter-icon.svg",
+        "rating": 4
+      },
+      {
+        "name": "WordPress",
+        "icon": "/images/home/education-skill/wordpress-icon.svg",
+        "rating": 4
+      },
+      {
+        "name": "Arduino",
+        "icon": "/images/home/education-skill/arduino-icon.svg",
+        "rating": 4
+      },
+      {
+        "name": "Graphic",
+        "icon": "/images/home/education-skill/graphic-icon.svg",
+        "rating": 5
+      }
+    ]
+  },
+  "contactLinks": {
+    "socialLinks": [
+      {
+        "title": "LinkedIn",
+        "href": "https://www.linkedin.com/in/darshana-s-perera/"
+      },
+      {
+        "title": "GitHub",
+        "href": "https://github.com/darshana-perera-97"
+      },
+      {
+        "title": "Portfolio",
+        "href": "https://www.darshanaperera.online"
+      }
+    ],
+    "contactInfo": [
+      {
+        "type": "email",
+        "label": "ds.perera.1997@gmail.com",
+        "link": "mailto:ds.perera.1997@gmail.com"
+      },
+      {
+        "type": "phone",
+        "label": "+94 77 146 1925",
+        "link": "tel:+94771461925"
+      }
+    ]
+  }
+}
